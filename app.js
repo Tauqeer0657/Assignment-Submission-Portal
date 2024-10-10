@@ -14,8 +14,8 @@ app.use(cookieParser());
 app.use(express.json());
 
 // Routes
-app.use("/api/users", userRoutes);
-app.use("/api/admins", adminRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Connect to MongoDB database and then start the server only after successful connection
 connectDB()
