@@ -1,10 +1,16 @@
+require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
-require("dotenv").config();
+const cookieParser = require('cookie-parser');
 
 const app = express();
+
+// Middleware to parse cookies from incoming requests
+app.use(cookieParser());
+
+// Middleware to parse JSON bodies from incoming requests
 app.use(express.json());
 
 // Routes

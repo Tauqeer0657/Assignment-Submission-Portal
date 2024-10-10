@@ -7,9 +7,10 @@ const adminSchema = new mongoose.Schema({
      unique: true
    },
   password: {
-     type: String,
-     required: true
-   },
+    type: String,
+    required: [true, "Password is required"],
+    minlength: [6, "Password must be at least 6 characters long"]
+  },
   role: {
      type: String,
      default: 'Admin'
